@@ -49,4 +49,14 @@ python app.py
 - **Admin Panel**: Check analytics (revenue, busiest stations) and monitor bookings.
 - **Role Based Access**: Register as a user. Admin can be set by manually changing the role in the DB to `admin`.
 
+## Screenshots
+
+| Login | AI Assistant |
+|---------|---------|
+| ![](assets/login-page.png) | ![](assets/ai-assistant.png) |
+
+### Mobile View
+
+![](assets/mobile-responsive.png)
+
 Enjoy the premium dark-mode, futuristic interface designed for a modern EV charging experience.
