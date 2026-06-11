@@ -1,4 +1,4 @@
-# ChargeMate - EV Charging Station Locator & Slot Booking System
+# VOLTPOD – AI-Powered EV Charging Platform
 
 A full-stack web application designed for EV owners to easily find nearby charging stations, check real-time availability, and book slots.
 
@@ -33,12 +33,15 @@ npm install
 npm run dev
 ```
 
-###4.Python ml services setup
+### 4. Python ML Service Setup
 
-open new terminal and entter following commands
+Open a new terminal and run:
+
+```bash
 cd ml-service
 pip install -r requirements.txt
 python app.py
+```
 ## Features
 - **Real-time Map**: Browse charging stations around the city.
 - **Dynamic Dashboard**: View your upcoming, active, and completed bookings.
@@ -46,4 +49,4 @@ python app.py
 - **Admin Panel**: Check analytics (revenue, busiest stations) and monitor bookings.
 - **Role Based Access**: Register as a user. Admin can be set by manually changing the role in the DB to `admin`.
 
-Enjoy the premium dark-mode, futuristic EV charging experience!
+Enjoy the premium dark-mode, futuristic interface designed for a modern EV charging experience.
