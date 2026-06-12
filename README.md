@@ -49,10 +49,6 @@ python app.py
 - **Admin Panel**: Check analytics (revenue, busiest stations) and monitor bookings.
 - **Role Based Access**: Register as a user. Admin can be set by manually changing the role in the DB to `admin`.
 
-## System Architecture
-
-![Architecture Diagram](assets/architecture-diagram.png)
-
 ## Screenshots
 
 ### 🏠 Home Page
