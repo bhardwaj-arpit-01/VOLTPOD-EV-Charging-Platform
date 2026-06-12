@@ -53,15 +53,25 @@ python app.py
 
 ![Architecture Diagram](assets/architecture-diagram.png)
 
-## Screenshots
+## 📸 Screenshots
 
-| Login | AI Assistant |
-|---------|---------|
-| ![](assets/login-page.png) | ![](assets/ai-assistant.png) |
+### 🏠 Home Page
+![Home Page](assets/home-page.png)
 
-### Mobile View
+### 🔐 Login Page
+![Login Page](assets/login-page.png)
 
-![](assets/mobile-responsive.png)
+### 🗺️ Charging Stations Map
+![Map](assets/charging-stations-map.png)
+
+### 📊 Dashboard
+![Dashboard](assets/dashboard.png)
+
+### 💰 Wallet
+![Wallet](assets/wallet.png)
+
+### 🤖 AI Assistant
+![AI Assistant](assets/ai-assistant.png)
 
 ## Future Improvements
 
