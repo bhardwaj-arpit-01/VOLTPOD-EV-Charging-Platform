@@ -43,9 +43,33 @@ router.post('/chat', async (req, res) => {
 
     res.json({ reply: response.text });
   } catch (err) {
-    console.error('AI Error:', err);
-    res.status(500).json({ msg: 'AI Service is currently unavailable. Please check your API key.' });
+  console.error('AI Error:', err);
+
+  try {
+    const fallbackSlots = await Slot.find({ status: 'available' })
+      .populate('stationId', 'name pricePerUnit')
+      .limit(3);
+
+    const recommendations = fallbackSlots.map(slot =>
+      `${slot.stationId.name} - ${slot.chargerType} (${slot.powerKW}kW) - ₹${slot.stationId.pricePerUnit}/kWh`
+    );
+
+    return res.json({
+      reply:
+        `⚠️ AI service is temporarily busy.\n\n` +
+        `Based on live station data, here are some available charging options:\n\n` +
+        recommendations.join('\n')
+    });
+
+  } catch (fallbackError) {
+    console.error('Fallback Error:', fallbackError);
+
+    return res.json({
+      reply:
+        '⚠️ AI service is temporarily busy. Please try again in a few moments.'
+    });
   }
+}
 });
 
 // @route   POST api/ai/optimize
