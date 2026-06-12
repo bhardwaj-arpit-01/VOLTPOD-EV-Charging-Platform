@@ -16,7 +16,7 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <div className="flex flex-col md:flex-row h-screen bg-[#eef2f6] dark:bg-[#0a0f1a] font-sans text-gray-800 dark:text-white transition-colors duration-300">
+        <div className="flex flex-row h-screen bg-[#eef2f6] dark:bg-[#0a0f1a] font-sans text-gray-800 dark:text-white transition-colors duration-300">
           <Sidebar />
           <div className="flex-1 overflow-hidden relative">
             <Routes>

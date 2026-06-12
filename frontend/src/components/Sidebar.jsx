@@ -47,7 +47,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="hidden md:flex w-64 bg-[#f8fafc] dark:bg-[#161b33] border-r border-gray-200 dark:border-gray-800 h-full flex-col shrink-0 transition-colors duration-300">
+    <div className="w-64 bg-[#f8fafc] dark:bg-[#161b33] border-r border-gray-200 dark:border-gray-800 h-full flex flex-col shrink-0 transition-colors duration-300">
 
       <div className="p-6 flex-1 overflow-y-auto custom-scrollbar">
         <Link to="/" className="flex items-center gap-3 text-gray-900 dark:text-white mb-10">
