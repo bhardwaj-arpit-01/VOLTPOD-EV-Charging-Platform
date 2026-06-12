@@ -53,7 +53,7 @@ python app.py
 
 ![Architecture Diagram](assets/architecture-diagram.png)
 
-## 📸 Screenshots
+## Screenshots
 
 ### 🏠 Home Page
 ![Home Page](assets/home-page.png)
