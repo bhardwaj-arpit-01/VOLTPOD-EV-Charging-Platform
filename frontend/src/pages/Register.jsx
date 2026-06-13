@@ -43,7 +43,7 @@ const Register = () => {
           batteryCapacity: Number(formData.batteryCapacity) || 0
         }
       };
-      const res = await axios.post('http://localhost:5000/api/auth/register', payload);
+      const res = await axios.post('https://voltpod-ev-charging-platform.onrender.com/api/auth/register', payload);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
 

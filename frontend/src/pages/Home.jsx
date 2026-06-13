@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     const fetchStations = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/stations');
+        const res = await axios.get('https://voltpod-ev-charging-platform.onrender.com/api/stations');
         setStations(res.data);
         setLoading(false);
       } catch (error) {
@@ -26,7 +26,7 @@ const Home = () => {
     fetchStations();
 
     // Initialize the socket as a local variable inside the effect
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://voltpod-ev-charging-platform.onrender.com');
 
     // The cleanup function captures newSocket in its closure and safely disconnects it
     return () => newSocket.close();

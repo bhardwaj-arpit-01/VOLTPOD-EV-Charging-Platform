@@ -12,7 +12,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchBookingsData = () => {
       const token = localStorage.getItem('token');
-      axios.get('http://localhost:5000/api/bookings/my', {
+      axios.get('https://voltpod-ev-charging-platform.onrender.com/api/bookings/my', {
         headers: { Authorization: `Bearer ${token}` }
       }).then(res => {
         setBookings(res.data);
@@ -32,7 +32,7 @@ const Dashboard = () => {
         const hoursToPredict = [currentHour, (currentHour + 2) % 24, (currentHour + 4) % 24];
 
         const mlData = await Promise.all(
-          hoursToPredict.map(hr => axios.get(`http://localhost:8000/api/predict?hour=${hr}&day=${currentDay}&station_id=1`))
+          hoursToPredict.map(hr => axios.get(`https://voltpod-ml-service.onrender.com/api/predict?hour=${hr}&day=${currentDay}&station_id=1`))
         );
         setPredictions(mlData.map(res => res.data));
         setPredicting(false);
@@ -44,7 +44,7 @@ const Dashboard = () => {
 
     fetchPredictions();
 
-    const socket = io('http://localhost:5000');
+    const socket = io('https://voltpod-ev-charging-platform.onrender.com');
     socket.on('slotStatusChanged', fetchBookingsData);
     return () => socket.close();
   }, []);
@@ -54,12 +54,12 @@ const Dashboard = () => {
       const token = localStorage.getItem('token');
 
       // 1. Cancel the booking via backend
-      const cancelRes = await axios.put(`http://localhost:5000/api/bookings/${id}/cancel`, {}, {
+      const cancelRes = await axios.put(`https://voltpod-ev-charging-platform.onrender.com/api/bookings/${id}/cancel`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
       // 2. Fetch the updated bookings list
-      const res = await axios.get('http://localhost:5000/api/bookings/my', {
+      const res = await axios.get('https://voltpod-ev-charging-platform.onrender.com/api/bookings/my', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setBookings(res.data);

@@ -37,7 +37,7 @@ const OperatorDashboard = () => {
   const fetchData = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:5000/api/operator/dashboard', {
+      const res = await axios.get('https://voltpod-ev-charging-platform.onrender.com/api/operator/dashboard', {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Ensure we always have arrays even if backend sends empty response
@@ -58,7 +58,7 @@ const OperatorDashboard = () => {
     const loadInitial = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/operator/dashboard', {
+        const res = await axios.get('https://voltpod-ev-charging-platform.onrender.com/api/operator/dashboard', {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (!ignore) {
@@ -81,7 +81,7 @@ const OperatorDashboard = () => {
   const handleSlotStatus = async (slotId, newStatus) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/operator/slots/${slotId}/status`, 
+      await axios.put(`https://voltpod-ev-charging-platform.onrender.com/api/operator/slots/${slotId}/status`, 
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` }}
       );
@@ -94,7 +94,7 @@ const OperatorDashboard = () => {
   const handleBookingStatus = async (bookingId, newStatus) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/operator/bookings/${bookingId}/status`, 
+      await axios.put(`https://voltpod-ev-charging-platform.onrender.com/api/operator/bookings/${bookingId}/status`, 
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` }}
       );

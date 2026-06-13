@@ -33,7 +33,7 @@ const BookingModal = ({ station, slot, onClose, onSuccess }) => {
       const endMins = totalMinutes % 60;
       const endTime = `${endHours.toString().padStart(2, '0')}:${endMins.toString().padStart(2, '0')}`;
 
-      const bookingRes = await axios.post('http://localhost:5000/api/bookings', {
+      const bookingRes = await axios.post('https://voltpod-ev-charging-platform.onrender.com/api/bookings', {
         stationId: station._id, slotId: slot._id, date, startTime: time, endTime, totalCost, paymentMethod
       }, { headers: { Authorization: `Bearer ${token}` } });
 

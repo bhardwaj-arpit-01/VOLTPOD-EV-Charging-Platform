@@ -30,7 +30,7 @@ const AIAssistant = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/ai/chat', 
+      const res = await axios.post('https://voltpod-ev-charging-platform.onrender.com/api/ai/chat', 
         { prompt: userMessage },
         { headers: { Authorization: `Bearer ${token}` } }
       );

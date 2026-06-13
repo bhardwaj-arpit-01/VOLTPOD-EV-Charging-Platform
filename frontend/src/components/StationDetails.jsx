@@ -25,7 +25,7 @@ const StationDetails = ({ station, onBack }) => {
     const loadSlots = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:5000/api/stations/${station._id}/slots`);
+        const res = await axios.get(`https://voltpod-ev-charging-platform.onrender.com/api/stations/${station._id}/slots`);
         if (!cancelled) {
           setSlots(res.data);
           setLoading(false);
@@ -49,7 +49,7 @@ const StationDetails = ({ station, onBack }) => {
     setAiResult('');
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/ai/optimize', {
+      const res = await axios.post('https://voltpod-ev-charging-platform.onrender.com/api/ai/optimize', {
         stationId: station._id, carModel, currentBattery: currentBat, targetBattery: targetBat
       }, { headers: { Authorization: `Bearer ${token}` } });
       setAiResult(res.data.recommendation);

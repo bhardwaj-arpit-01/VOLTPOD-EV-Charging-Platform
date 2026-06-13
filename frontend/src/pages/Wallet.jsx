@@ -12,7 +12,7 @@ const Wallet = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/auth/wallet/connect', {}, {
+      const res = await axios.post('https://voltpod-ev-charging-platform.onrender.com/api/auth/wallet/connect', {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -32,7 +32,7 @@ const Wallet = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/auth/wallet/redeem', {}, {
+      const res = await axios.post('https://voltpod-ev-charging-platform.onrender.com/api/auth/wallet/redeem', {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
